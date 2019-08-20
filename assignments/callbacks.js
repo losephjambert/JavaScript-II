@@ -62,6 +62,8 @@ function sumNums(x, y, cb) {
   // sumNums adds two numbers (x, y) and passes the result to the callback.
   return cb(x + y);
 }
+const test_sumNums = sumNums(5, 5, result => `5 + 5 equals ${result}`);
+console.log(test_sumNums);
 
 function multiplyNums(x, y, cb) {
   // multiplyNums multiplies two numbers and passes the result to the callback.
