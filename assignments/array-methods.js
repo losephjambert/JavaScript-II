@@ -459,9 +459,7 @@ const runners = [
 // The event director needs both the first and last names of each runner for their running bibs.
 // Combine both the first and last names and populate a new array called `fullNames`. This array will contain just strings.
 let fullNames = [];
-runners.forEach(runner =>
-  fullNames.push(`${runner.first_name} ${runner.last_name}`)
-);
+runners.forEach(runner => fullNames.push(`${runner.first_name} ${runner.last_name}`));
 console.log(fullNames);
 
 // ==== Challenge 2: Use .map() ====
@@ -492,9 +490,7 @@ console.log(ticketPriceTotal);
 // Problem 1
 // the race organizers want to list all the companies involved on the back of a t-shirt.
 // The designer they've hired needs all the company names sorted by length.
-let sortedCompanyNames = runners
-  .map(runner => runner.company_name)
-  .sort((a, b) => a.length - b.length);
+let sortedCompanyNames = runners.map(runner => runner.company_name).sort((a, b) => a.length - b.length);
 console.log(sortedCompanyNames);
 
 // Problem 2
@@ -527,8 +523,42 @@ console.log(donorCategories(runners));
 // the race organizers are printing the runners' name tags for the day of the race.
 // each name tag needs the runner's first and last names, as well as a identifier in this format: a-1234
 // no two runners can have the same identifier
-const raceDayIds = (array, cb) => {};
+// return an array containing all the runners and their name tag ids
+/*
+  {
+    first_name: 'jill',
+    last_name: 'staples'
+    name_tag: a-1234
+  }
+*/
+const raceDayIds = array => {
+  const raceDayRunners = [];
+  const raceDayIds = new Set();
+  let ids = [...uniqueIds(array.length, raceDayIds)];
 
-const getRandomNumber = () => Math.floor(Math.random() * (9999 - 1000) + 1000);
+  array.forEach(({ first_name, last_name }, index) => {
+    raceDayRunners.push({
+      id: ids[index],
+      first_name,
+      last_name
+    });
+  });
+  return raceDayRunners;
+};
 
-console.log(getRandomNumber());
+const letters = "abcdefghijklmnopqrstuvwxyz";
+const getRandomID = () => `${letters[getRandomNumber(0, letters.length - 1)]}-${getRandomNumber(1000, 9999)}`;
+const getRandomNumber = (min, max) => Math.floor(Math.random() * (max - min) + min);
+const uniqueIds = (size, set) => {
+  if (set.size === size) return [...set];
+
+  let id = getRandomID();
+  if (!set.has(id)) {
+    set.add(id);
+    return uniqueIds(size, set);
+  } else {
+    return uniqueIds(size, set);
+  }
+};
+
+console.log(raceDayIds(runners));
