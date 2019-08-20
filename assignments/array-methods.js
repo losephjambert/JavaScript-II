@@ -490,7 +490,11 @@ console.log(ticketPriceTotal);
 // Try to create and then solve 3 unique problems using one or many of the array methods listed above.
 
 // Problem 1
-
+// the race organizers want to list all the companies involved on the back of a t-shirt.
+// The designer they've hired needs all the company names sorted alphabetically in a list.
+const alphabetizedCompanyNames = runners
+  .map(runner => runner.company_name)
+  .sort((company, comparison) => "something");
 // Problem 2
 
 // Problem 3

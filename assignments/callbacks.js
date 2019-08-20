@@ -131,14 +131,12 @@ function removeDuplicates(array, cb) {
   // Do not mutate the original array.
   const set = new Set();
   array.forEach(item => {
-    if (!cb(item, set)) set.add(item);
+    if (!set.has(item)) set.add(item);
   });
-  return [...set];
+  return cb([...set]);
 }
 
-const checkItem = (item, set) => {
-  return set.has(item);
-};
+const uniqueItems = array => array;
 
-console.log(removeDuplicates(items, checkItem));
+console.log(removeDuplicates(items, uniqueItems));
 console.log(items);
