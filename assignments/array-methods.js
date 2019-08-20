@@ -534,11 +534,11 @@ console.log(donorCategories(runners));
 const raceDayIds = array => {
   const raceDayRunners = [];
   const raceDayIds = new Set();
-  let ids = [...uniqueIds(array.length, raceDayIds)];
+  let nametags = [...uniqueIds(array.length, raceDayIds)];
 
   array.forEach(({ first_name, last_name }, index) => {
     raceDayRunners.push({
-      id: ids[index],
+      name_tag: nametags[index],
       first_name,
       last_name
     });
