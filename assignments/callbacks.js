@@ -42,6 +42,11 @@ function getLength(arr, cb) {
   // getLength passes the length of the array into the callback.
   return cb(arr.length);
 }
+const test_getLength = getLength(
+  items,
+  length => `This array has ${length} items.`
+);
+console.log(test_getLength);
 
 function last(arr, cb) {
   // last passes the last item of the array into the callback.
