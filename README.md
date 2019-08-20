@@ -43,7 +43,7 @@ We have learned that closures allow us to access values in scope that have alrea
 
 **Hint: Utilize debugger statements in your code in combination with your developer tools to easily identify closure values.**
 
-- [ ] Review the contents of the [closure.js](assignments/closure.js) file.
+- [x] Review the contents of the [closure.js](assignments/closure.js) file.
 - [ ] Complete the problems provided to you but skip over stretch problems until you are complete with every other JS file first.
 
 ## Stretch Goals
