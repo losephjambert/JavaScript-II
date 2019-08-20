@@ -81,6 +81,10 @@ function contains(item, list, cb) {
   // Pass true to the callback if it is, otherwise pass false.
   return cb(list.includes(item));
 }
+const test_contains = contains("Gum", items, bool => {
+  return bool ? `Gum is in the array.` : `Gum is not in the array.`;
+});
+console.log(test_contains);
 
 /* STRETCH PROBLEM */
 
