@@ -491,10 +491,36 @@ console.log(ticketPriceTotal);
 
 // Problem 1
 // the race organizers want to list all the companies involved on the back of a t-shirt.
-// The designer they've hired needs all the company names sorted alphabetically in a list.
-const alphabetizedCompanyNames = runners
+// The designer they've hired needs all the company names sorted by length.
+let sortedCompanyNames = runners
   .map(runner => runner.company_name)
-  .sort((company, comparison) => "something");
+  .sort((a, b) => a.length - b.length);
+console.log(sortedCompanyNames);
+
 // Problem 2
+// the race organizers want to put donors in three categories: bronze, silver and gold.
+// bronze donors donated < 100
+// silver donors donated >= 100 && < 200
+// gold donors donated >= 200
+// the organizers need all the information about each donor in the categories
+const donorCategories = array => {
+  const donors = {
+    bronze: [],
+    silver: [],
+    gold: []
+  };
+
+  const { bronze, silver, gold } = donors;
+
+  array.forEach(item => {
+    if (item.donation < 100) bronze.push(item);
+    else if (item.donation >= 200) gold.push(item);
+    else silver.push(item);
+  });
+
+  return donors;
+};
+
+console.log(donorCategories(runners));
 
 // Problem 3
