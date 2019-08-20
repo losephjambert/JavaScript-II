@@ -52,6 +52,11 @@ function last(arr, cb) {
   // last passes the last item of the array into the callback.
   return cb(arr[arr.length - 1]);
 }
+const test_last = last(
+  items,
+  lastItem => `The last item in the array is ${lastItem}`
+);
+console.log(test_last);
 
 function sumNums(x, y, cb) {
   // sumNums adds two numbers (x, y) and passes the result to the callback.
