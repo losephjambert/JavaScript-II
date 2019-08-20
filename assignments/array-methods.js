@@ -524,3 +524,11 @@ const donorCategories = array => {
 console.log(donorCategories(runners));
 
 // Problem 3
+// the race organizers are printing the runners' name tags for the day of the race.
+// each name tag needs the runner's first and last names, as well as a identifier in this format: a-1234
+// no two runners can have the same identifier
+const raceDayIds = (array, cb) => {};
+
+const getRandomNumber = () => Math.floor(Math.random() * (9999 - 1000) + 1000);
+
+console.log(getRandomNumber());
