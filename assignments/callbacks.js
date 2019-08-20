@@ -69,6 +69,12 @@ function multiplyNums(x, y, cb) {
   // multiplyNums multiplies two numbers and passes the result to the callback.
   return cb(x * y);
 }
+const test_multiplyNums = multiplyNums(
+  5,
+  5,
+  result => `The product of 5 * 5 equals ${result}`
+);
+console.log(test_multiplyNums);
 
 function contains(item, list, cb) {
   // contains checks if an item is present inside of the given array/list.
