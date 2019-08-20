@@ -479,7 +479,9 @@ console.log(runnersLargeSizeShirt);
 // ==== Challenge 4: Use .reduce() ====
 // The donations need to be tallied up and reported for tax purposes.
 // Add up all the donations and save the total into a ticketPriceTotal variable.
-let ticketPriceTotal = 0;
+let ticketPriceTotal = runners.reduce((accumulator, runner) => {
+  return accumulator + runner.donation;
+}, 0);
 console.log(ticketPriceTotal);
 
 // ==== Challenge 5: Be Creative ====
