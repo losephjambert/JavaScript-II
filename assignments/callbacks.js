@@ -1,8 +1,8 @@
 // Create a higher order function and invoke the callback function to test your work. You have been provided an example of a problem and a solution to see how this works with our items array.  Study both the problem and the solution to figure out the rest of the problems.
 
-const items = ["Pencil", "Notebook", "yo-yo", "Gum", "Notebook", "Gum"];
+const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
 
-/* 
+/*
 
   // GIVEN THIS PROBLEM:
 
@@ -121,7 +121,7 @@ function contains(item, list, cb) {
 const test_contains = (bool, item) => {
   return bool ? `${item} is in the array.` : `${item} is not in the array`;
 };
-console.log(contains("Gum", items, test_contains));
+console.log(contains('Gum', items, test_contains));
 
 /* STRETCH PROBLEM */
 
@@ -135,7 +135,7 @@ function removeDuplicates(array, cb) {
   });
   return cb([...set]);
 }
-
+items.push('Notebook', 'Gum', 'Shoe');
 const uniqueItems = array => array;
 
 console.log(removeDuplicates(items, uniqueItems));
