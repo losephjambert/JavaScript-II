@@ -527,9 +527,8 @@ console.log(donorCategories(runners));
 // return an array containing all the runners and their name tag ids
 /*
   {
-    first_name: 'jill',
-    last_name: 'staples'
-    name_tag: a-1234
+    name_tag: a-1234,
+    full_name: Tom Tomson
   }
 */
 
@@ -541,8 +540,7 @@ const raceDayIds = array => {
   raceDayRunners = array.map(({ first_name, last_name }, index) => {
     return {
       name_tag: nametags[index],
-      first_name,
-      last_name,
+      full_name: `${first_name} ${last_name}`,
     };
   });
   return raceDayRunners;
