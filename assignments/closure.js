@@ -3,10 +3,26 @@
 // Keep it simple! Remember a closure is just a function
 // that manipulates variables defined in the outer scope.
 // The outer scope can be a parent function, or the top level of the script.
+const field = noun => {
+  console.log(`There are ${noun} in the field.`);
 
+  const moat = animal => {
+    console.log(
+      `Soldiers at the moat can see the ${noun} in the field. The moat has ${animal}'s in it.`
+    );
+
+    const castle = properNoun => {
+      console.log(
+        `Queen ${properNoun} ordered ${animal}'s put in the moat to defend her castle from the ${noun} in the field.`
+      );
+    };
+    castle("Kate");
+  };
+  moat("sharks");
+};
+field("geese");
 
 /* STRETCH PROBLEMS, Do not attempt until you have completed all previous tasks for today's project files */
-
 
 // ==== Challenge 2: Implement a "counter maker" function ====
 const counterMaker = () => {
